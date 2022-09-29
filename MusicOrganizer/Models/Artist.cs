@@ -27,6 +27,11 @@ namespace MusicOrganizer.Models
     {
      return _instances;
     }
+
+    public static Artist Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
   }
 }
 
