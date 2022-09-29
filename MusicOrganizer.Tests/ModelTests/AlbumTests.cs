@@ -79,5 +79,19 @@ namespace MusicOrganizer.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_AlbumsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string title = "Working Man's Dead";
+      Album newAlbum = new Album(title);
+
+      //Act
+      int result = newAlbum.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }

@@ -5,12 +5,14 @@ namespace MusicOrganizer.Models
   public class Album
   {
     public string Title { get; set; }
+    public int Id { get; }
     private static List<Album> _instances = new List<Album> {};
 
     public Album (string title)
     {
       Title = title;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static void ClearAll()
@@ -22,5 +24,7 @@ namespace MusicOrganizer.Models
     {
       return _instances;
     }
+
+
   }
 }
