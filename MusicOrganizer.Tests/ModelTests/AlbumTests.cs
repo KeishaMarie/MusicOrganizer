@@ -62,5 +62,22 @@ namespace MusicOrganizer.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAlbum_AlbumList()
+    {
+      //Arrange
+      string title01 = "Working Man's Dead";
+      string title02 = "Europe 72";
+      Album newAlbum1 = new Album(title01);
+      Album newAlbum2 = new Album(title02);
+      List<Album> newList = new List<Album> { newAlbum1, newAlbum2 };
+
+      //Act
+      List<Album> result = Album.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
