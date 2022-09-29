@@ -81,5 +81,23 @@ namespace MusicOrganizer.Tests
       //Assert
       Assert.AreEqual(newArtist2, result);
     }
+
+    [TestMethod]
+    public void AddAlbum_AssociatesAlbumWithCategory_AlbumList()
+    {
+      //Arrange
+      string title = "Working Man's Dead";
+      Album newAlbum = new Album(title);
+      List<Album> newList = new List<Album> { newAlbum };
+      string name = "The Grateful Dead";
+      Artist newArtist = new Artist(name);
+      newArtist.AddAlbum(newAlbum);
+
+      //Act
+      List<Album> result = newArtist.Albums;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
