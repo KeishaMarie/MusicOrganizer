@@ -48,5 +48,22 @@ namespace MusicOrganizer.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllArtistObjects_ArtistList()
+    {
+      //Arrange
+      string name01 = "Frank Zappa";
+      string name02 = "The Gratefule Dead";
+      Artist newArtist1 = new Artist(name01);
+      Artist newArtist2 = new Artist(name02);
+      List<Artist> newList = new List<Artist> { newArtist1, newArtist2 };
+
+      //Act
+      List<Artist> result = Artist.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

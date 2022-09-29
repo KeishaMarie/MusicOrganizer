@@ -6,18 +6,27 @@ namespace MusicOrganizer.Models
   {
     private static List<Artist> _instances = new List<Artist> {};
     public string Name { get; set; }
-    // public int Id { get; }
+    public int Id { get; }
     // public List<Album> Albums { get; set; }
 
     public Artist(string artistName)
     {
       Name = artistName;
       _instances.Add(this);
-      // ID = _instances.Count;
+      Id = _instances.Count;
       // Albums = new List<Album>{};
     }
     // Test class Artist reference PG 34
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static List<Artist> GetAll()
+    {
+     return _instances;
+    }
   }
 }
 
