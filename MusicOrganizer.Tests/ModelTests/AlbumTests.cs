@@ -19,5 +19,19 @@ namespace MusicOrganizer.Tests
       Album newAlbum = new Album("test");
       Assert.AreEqual(typeof(Album), newAlbum.GetType());
     }
+
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      //Arrange
+      string title = "Working Man's Dead";
+
+      //Act
+      Album newAlbum = new Album(title);
+      string result = newAlbum.Title;
+
+      //Assert
+      Assert.AreEqual(title, result);
+    }
   }
 }

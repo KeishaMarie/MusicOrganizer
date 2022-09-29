@@ -4,12 +4,12 @@ namespace MusicOrganizer.Models
 {
   public class Album
   {
-    public string Description { get; set; }
+    public string Title { get; set; }
     private static List<Album> _instances = new List<Album> {};
 
-    public Album (string description)
+    public Album (string title)
     {
-      Description = description;
+      Title = title;
       _instances.Add(this);
     }
 
