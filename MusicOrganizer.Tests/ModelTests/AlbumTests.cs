@@ -33,5 +33,21 @@ namespace MusicOrganizer.Tests
       //Assert
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Working Man's Dead";
+      Album newAlbum = new Album(title);
+
+      //Act
+      string updatedTitle = "Europe 72";
+      newAlbum.Title = updatedTitle;
+      string result = newAlbum.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
+    }
   }
 }
