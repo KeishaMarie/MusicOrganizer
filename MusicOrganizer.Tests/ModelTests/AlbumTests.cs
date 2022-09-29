@@ -93,5 +93,21 @@ namespace MusicOrganizer.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectAlbum_Album()
+    {
+      //Arrange
+      string title01 = "Working Man's Dead";
+      string title02 = "Europe 72";
+      Album newAlbum1 = new Album(title01);
+      Album newAlbum2 = new Album(title02);
+
+      //Act
+      Album result = Album.Find(2);
+
+      //Assert
+      Assert.AreEqual(newAlbum2, result);
+    }
   }
 }
